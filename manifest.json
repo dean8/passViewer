@@ -1,0 +1,25 @@
+{
+	"name" : "passViewer",
+	"version" : "1.0",
+	"description" : "密码框提示功能",
+	"manifest_version" : 2,
+	"icons": {
+        "16": "images/icons.png",
+        "48": "images/icons.png",
+        "128": "images/icons.png"
+    },
+	"permissions" : ["tabs","https://*/*","http://*/*"],
+	"background" : {
+		"scripts" : ["js/js.js"]
+	},
+	"content_scripts" : [{
+		"matches": ["http://*/*","https://*/*"],   
+        "js": ["js/content.js"],   
+        "run_at": "document_end",  
+        "all_frames": false   
+	}],
+	"page_action" : {
+		"default_icon" : "images/eye.png",
+		"default_title" : "passViewer"
+	}
+}
